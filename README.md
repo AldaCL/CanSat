@@ -11,14 +11,14 @@ Firstly, the program reads 20 values from the sensor in order to calibrate it.
 ![alt text](https://github.com/AldaCL/CanSat/blob/master/Screenshots/calibration.png)
 
 The data sent by the sensor (Arduino / Xbee), make up an array of 15 values for different sensed magnitudes, in order, these are:
--Temperature (In Fahrenheit degrees)
--Presure (Raw pressure, its converted to Pa)
--Altitue (Absolute OSL , with calibration we get height)
--Pitch, Roll, Yaw (Absolute magnitudes, its converted to degrees over calibration position)
--Heading Filtered 
--Kalman Pitch, Kalman Roll; Get after apply kalman filter. 
--Acceleration (X, Y ,Z), Got from Accelerometer
--Gyro (X, Y , Z), Got from Gyroscope. 
+*Temperature (In Fahrenheit degrees)
+*Presure (Raw pressure, its converted to Pa)
+*Altitue (Absolute OSL , with calibration we get height)
+*Pitch, Roll, Yaw (Absolute magnitudes, its converted to degrees over calibration position)
+*Heading Filtered 
+*Kalman Pitch, Kalman Roll; Get after apply kalman filter. 
+*Acceleration (X, Y ,Z), Got from Accelerometer
+*Gyro (X, Y , Z), Got from Gyroscope. 
 
 Feel free to ignore some magnitudes and use only those that are useful for your purposes< you only need to comment the lines on Arduino code and in python code; also change the size of array to receive. 
 
