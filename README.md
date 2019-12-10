@@ -4,7 +4,7 @@
 
 ### Ground Station: 
 
-The system was developed pn python 2.7, implements **OpenGL** , **pygame** , **MatplotLib* and [Drawnow](https://github.com/stsievert/python-drawnow )
+The system was developed pn python 2.7, implements **OpenGL** , **pygame** , **MatplotLib** and [Drawnow](https://github.com/stsievert/python-drawnow )
 
 Firstly, the program reads 20 values from the sensor in order to calibrate it. 
 
