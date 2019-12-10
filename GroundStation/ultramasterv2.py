@@ -10,8 +10,8 @@ import time
 import matplotlib.pyplot as plt 
 from drawnow import *
 
-#ser = serial.Serial('/dev/tty.usbserial', 38400, timeout=1)
-ser = serial.Serial('COM4', 19200, timeout=1)
+ser = serial.Serial('/dev/ttyACM0', 19200, timeout=1)
+#ser = serial.Serial('COM4', 19200, timeout=1)
 
 ax = ay = az = 0.0
 yaw_mode = False
