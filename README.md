@@ -1,5 +1,5 @@
 # CanSat
-##Ground Station System, CanSat On board Telemetry with GY-80, Arduino and Xbee
+## Ground Station System, CanSat On board Telemetry with GY-80, Arduino and Xbee
 
 
 ### Ground Station: 
@@ -36,11 +36,8 @@ And the 3D model of Cansat.
 ![alt text](https://github.com/AldaCL/CanSat/blob/master/Screenshots/can4.png)
 
 
-![alt text](https://github.com/AldaCL/CanSat/blob/master/Screenshots/can2.png)
-![alt text](https://github.com/AldaCL/CanSat/blob/master/Screenshots/can3.png)
-
 We use the values of Pithc, roll and yaw to emulate the movement of the satellite; Axis were changed from original ones; because of the position of sensor into the CanSat. 
 
 
 
-////Soon more documentation of each function. 
+////Soon more documentation of each function, Xbee conections and the code of Arduino on board.
