@@ -39,5 +39,7 @@ And the 3D model of Cansat.
 We use the values of Pithc, roll and yaw to emulate the movement of the satellite; Axis were changed from original ones; because of the position of sensor into the CanSat. 
 
 
+Arduino Script take libraries from [Korneliusz Jarzębski](https://github.com/jarzebski) repositories, just added to libraries dir to facilitate integration.
+
 
 ////Soon more documentation of each function, Xbee conections and the code of Arduino on board.
