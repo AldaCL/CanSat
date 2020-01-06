@@ -1,5 +1,5 @@
 # CanSat
-## Ground Station System, CanSat On board Telemetry with GY-80, Arduino and Xbee
+## Ground Station System, CanSat On board Telemetry system with GY-80, Arduino and Xbee
 
 
 ### Ground Station: 
@@ -41,5 +41,20 @@ We use the values of Pithc, roll and yaw to emulate the movement of the satellit
 
 Arduino Script take libraries from [Korneliusz Jarzębski](https://github.com/jarzebski) repositories, just added to libraries dir to facilitate integration.
 
+On ground, Xbee is connected to a Arduino UNO to provide Serial comunication with the Laptop USB port. 
+a Xbee Shield can be utilized, but due to the ease of getting an Arduino UNO, it was implemented with this. 
 
-////Soon more documentation of each function, Xbee conections and the code of Arduino on board.
+### On board telemetry system: 
+
+The on telemetry system on satellite is conformed by an Arduino nano, GY-80 Sensor and a Xbee S2C pro RF Module working at 900 MHz.
+
+Arduino code reads values from sensor via I2C, then send it to XBee  Module connected. 
+
+![alt text](https://github.com/AldaCL/CanSat/blob/master/Screenshots/schemat.png)
+
+Xbee Module send data via RF to Xbee module in ground. (I strongly recommend research about Xbee protocol, configuration ,operation frequency, antenna gain and path losses effects because it define the maximun length of your communications system). 
+
+Our configuration could reach a maximum distance of 600 m with LOS. At this distance any object in the path can cause loss of communication.
+
+### On Mision results: 
+
