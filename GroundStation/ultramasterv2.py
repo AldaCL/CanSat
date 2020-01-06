@@ -201,7 +201,8 @@ def draw():
         glVertex(x, y, z)
         glVertex(x, -y, z)
     glEnd()
-         
+
+#function for read data from the array received on serial port     
 def read_data():
     global ax, ay, az
     global press
@@ -240,11 +241,11 @@ def read_data():
             f = open('fulldata.txt','a+') 
             f.write(line)
             f.close()
-            r = open('fulldata1.txt','w') 
+            r = open('fulldata1.txt','w') #To write data on a .txt file
             r.write(line)
             r.close()
 
-
+            #Data received on every slot of angles array
 
             temp = float(angles[0])
             #temps.append(temp)
@@ -262,7 +263,8 @@ def read_data():
 
             if (oco.isdigit()==True):
                 print oco
-                g = open ('compas\Arduino_Compass\compas.txt','w')
+                g = open ('compas\Arduino_Compass\compas.txt','w') #To write data on a Compass
+                #Made with Processing, ignore or comment lines 264-269.
                 g.write(angles[6])
                 g.close()
     return press,temp,alt
@@ -277,9 +279,9 @@ def main():
 
     video_flags = OPENGL|DOUBLEBUF
     calibrate()
-    pygame.init()
-    screen = pygame.display.set_mode((640,480), video_flags)
-    pygame.display.set_caption("Press Esc to quit, z toggles yaw mode")
+    pygame.init() #Init pygame env
+    screen = pygame.display.set_mode((640,480), video_flags) #Set pygame resolution
+    pygame.display.set_caption("Press Esc to quit, z toggles yaw mode") 
     resize(640,480)
     init()
     frames = 0
@@ -291,18 +293,21 @@ def main():
     #     f.write(header + "\n")
     #     f.close
 
-    while 1:
+    while 1: #Set infinyte while cycle
         event = pygame.event.poll()
-        if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
+        if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE): #read esc key
             pygame.quit()  #* quit pygame properly
             break       
-        if event.type == KEYDOWN and event.key == K_z:
+        if event.type == KEYDOWN and event.key == K_z: #read to change yaw mode
             yaw_mode = not yaw_mode
             #ser.write(b"z")
-        read_data()
-        draw()
-        pygame.display.flip()
-        frames = frames+1
+        read_data() #function to read data
+        draw() #plot data
+        pygame.display.flip() #Draw 3D model
+        frames = frames+1 #add times refreshed app
+
+        #Start saving data fter 30 cicles, in order to ignore first values
+        #Because this values are before calibration. 
 
         if (frames>=30):
             temps.append(temp)
@@ -323,6 +328,9 @@ def main():
             #h.write(printdatata)
             #h.close()
 
+            #Drop data to show in matplotlib.
+            #Change this value to change number of points wanted to be showed on Mtplib plot.
+            
             if (cnt>100):
                 temps.pop(0)
                 pressures.pop(0)
