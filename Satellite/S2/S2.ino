@@ -110,8 +110,8 @@ void loop()
 
   // Calculate Pitch, Roll and Yaw
  pitch = pitch + acc.YAxis * timeStep;
-  roll = roll + acc.XAxis * timeStep;
-  yaw = yaw + gyr.ZAxis * timeStep;
+ roll = roll + acc.XAxis * timeStep;
+ yaw = yaw + gyr.ZAxis * timeStep;
 
   // Calculate Pitch & Roll from accelerometer (deg)
   accPitch = -(atan2(acc.XAxis, sqrt(acc.YAxis*acc.YAxis + acc.ZAxis*acc.ZAxis))*180.0)/M_PI;
@@ -200,7 +200,7 @@ void loop()
   // Correcting the heading with the declination angle depending on your location
   // You can find your declination angle at: http://www.ngdc.noaa.gov/geomag-web/
   // At my location it's 4.2 degrees => 0.073 rad
-  declination = 0.073; 
+  declination = 0.0781; 
   heading += declination;
   
   // Correcting when signs are reveresed
