@@ -1,8 +1,21 @@
 # CanSat 🛰
 ## Ground Station System, CanSat On board Telemetry system with GY-80, Arduino and Xbee
 
+## Table of Contents
+1. [Ground Station](#gstation)
+2. [On board telemetry system](#telemetry)
+3. [Mision results](#results)
+4. [Installation and set-up](#install)
+    * [Satellite](#satelliteinstall)
+    * [Ground Station](#stationinstall)
+5. [Task List](#task)
 
-### Ground Station: 
+
+
+
+### Ground Station:  <a name="gstation"></a>
+
+
 
 The system was developed pn python 2.7, implements **OpenGL** , **pygame** , **MatplotLib** and [Drawnow](https://github.com/stsievert/python-drawnow )
 
@@ -44,7 +57,7 @@ Arduino Script take libraries from [Korneliusz Jarzębski](https://github.com/ja
 On ground, Xbee is connected to a Arduino UNO to provide Serial comunication with the Laptop USB port. 
 a Xbee Shield can be utilized, but due to the ease of getting an Arduino UNO, it was implemented with this. 
 
-### On board telemetry system: 
+### On board telemetry system: <a name="telemetry"></a>
 
 The on telemetry system on satellite is conformed by an Arduino nano, GY-80 Sensor and a Xbee S2C pro RF Module working at 900 MHz.
 
@@ -56,5 +69,37 @@ Xbee Module send data via RF to Xbee module in ground. (I strongly recommend res
 
 Our configuration could reach a maximum distance of 600 m with LOS. At this distance any object in the path can cause loss of communication.
 
-### On Mision results: 
+### Mision results: <a name="results"></a>
 
+
+### Installation : <a name="install"></a>
+
+#### Cansat code and implementation  <a name="satelliteinstall"></a>
+
+Open and compile **S2.ino** file with Arduino IDE, then upload it to Arduino NANO that will be placed inside satellite. Check wiring to sensors and Xbee.... (To be completed)
+
+#### Ground Station enviroment and code  <a name="stationinstall"></a>
+
+1. Clone this repo to your local dir, use `git clone https://github.com/AldaCL/CanSat.git` in terminal to clone via https (if you preffer, use ssh key and change the link.)
+
+2. To get an isolated enviroment (And don't broke your python libraries system or generate conflicts with versions), I strongly recommend use venv to install dependencies and libraries, just follow: 
+    1. Python 2.7 is nedeed, so check that you're using the correct **pip** in the case you have 2 versions of python (can be `pip`, `pip2`or `pip3` it depends on your python installation). I'll asume that `pip` corresponds to your pip version for python 2.7 
+    2. `pip install virtualenv` 
+    3. `python -m virtualenv cansatVenv`
+    4. `source cansatVenv/bin/activate`
+    5. `pip install -r requeriments.txt`, Could be possble that you need to run this commands as SU.
+    6. To got out of virtual enviroment just run `deactivate`, and to get in again run `source cansatVenv/bin/activate`
+
+3. Now you can open **ultramasterv2.py** file, and edit file 13/14 to define the serial port in your system on which Arduino UNO is mounted. *dev/ttyACM0 for example*
+
+4. Run `python ultramsterv2.py` and see the magic.  :rocket: 
+
+
+### Task List  <a name="task"></a>
+
+- [x] Telemetry implementation 
+- [ ] BMP280 Sensor test for temperature, pressure and humidity
+- [ ] 3D model optimization
+- [ ] Mount circuits on PCB
+- [ ] Landing system
+ 
