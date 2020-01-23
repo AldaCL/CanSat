@@ -1,1 +1,6 @@
 *.txt
+cansatVenv/*
+cansatVenv/
+/cansatVenv/
+/cansatVenv/*
+*/cansatVenv/*
