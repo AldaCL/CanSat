@@ -1,9 +1,9 @@
 
 #include <Wire.h>
-#include <BMP085.h>
-#include <L3G4200D.h>
-#include <ADXL345.h>
-#include <KalmanFilter.h>
+#include "../libraries/BMP085-BMP180/BMP085.h"
+#include "../libraries/L3G4200D/L3G4200D.h"
+#include "../libraries/ADXL345/ADXL345.h"
+#include "../libraries/KalmanFilter/KalmanFilter.h"
 #include <Servo.h>
 
 ADXL345 accelerometer;
