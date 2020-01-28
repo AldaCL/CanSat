@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 from drawnow import *
 
 
-ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)  #Linux
-#ser = serial.Serial('COM4', 19200, timeout=1) #Windows
+#ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)  #Linux
+ser = serial.Serial('COM4', 9600, timeout=1) #Windows
 
 dataFrameSize = 3  #Define number of elements to receive by Serial Port, this help to discard invalid/wrong values received, and to split values for his processing.
 dataArrayClean = []
