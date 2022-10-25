@@ -87,7 +87,7 @@ Open and compile **S2.ino** file with Arduino IDE, then upload it to Arduino NAN
     2. `pip install virtualenv` 
     3. `python -m virtualenv cansatVenv`
     4. `source cansatVenv/bin/activate`
-    5. `pip install -r requeriments.txt`, Could be possble that you need to run this commands as SU.
+    5. `pip install -r requirements.txt`, Could be possble that you need to run this commands as SU.
     6. To got out of virtual enviroment just run `deactivate`, and to get in again run `source cansatVenv/bin/activate`
 
 3. Now you can open **ultramasterv2.py** file, and edit file 13/14 to define the serial port in your system on which Arduino UNO is mounted. *dev/ttyACM0 for example*
