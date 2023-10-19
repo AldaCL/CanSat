@@ -1,6 +1,27 @@
-*.txt
+# Data
+# *.txt
+
+# Virtual environment
 cansatVenv/*
 cansatVenv/
 /cansatVenv/
 /cansatVenv/*
 */cansatVenv/*
+
+# Emacs/vim
+*~
+*.swp
+
+# VSCode
+.classpath
+.project
+.settings/
+
+# IntelliJ
+.idea
+
+# MacOS
+.DS_Store
+
+# Fritzing
+*.fzz
