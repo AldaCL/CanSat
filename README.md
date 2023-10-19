@@ -81,7 +81,7 @@ Our configuration could reach a maximum distance of 600 m with LOS. At this dist
 
 ### Wiring diagram <a name="wiringDiagram"></a>
 
-![alt text]()
+![connectionDiagram](https://github.com/uma-dev/CanSat/assets/22565959/dc9190e2-4393-4832-8dbb-b89346c00390)
 
 ### Mission results: <a name="results"></a>
 
