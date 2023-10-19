@@ -1,5 +1,5 @@
 # Data
-*.txt
+# *.txt
 
 # Virtual environment
 cansatVenv/*
@@ -22,3 +22,6 @@ cansatVenv/
 
 # MacOS
 .DS_Store
+
+# Fritzing
+*.fzz
